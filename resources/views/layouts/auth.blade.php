@@ -21,9 +21,9 @@
         <div class="bg-white rounded-lg shadow-lg p-8">
           
             <div class="mb-6 flex justify-center space-x-4">
-                <a href="/login" wire:navigate.hover class="{{ Request::is('login') ? 'text-blue-600': 'text-gray-500'}} font-medium py-1 px-3 rounded hover:bg-blue-50 transition">Login</a>
-                <a href="/register" wire:navigate.hover class="{{ Request::is('register') ? 'text-blue-600': 'text-gray-500'}} font-medium py-1 px-3 rounded hover:bg-blue-50 transition">Register</a>
-                <a href="/lupa" wire:navigate.hover class="{{ Request::is('lupa') ? 'text-blue-600': 'text-gray-500'}} font-medium py-1 px-3 rounded hover:bg-blue-50 transition">Lupa Password</a>
+                <a href="/login" wire:navigate class="{{ Request::is('login') ? 'text-blue-600': 'text-gray-500'}} font-medium py-1 px-3 rounded hover:bg-blue-50 transition">Login</a>
+                <a href="/register" wire:navigate class="{{ Request::is('register') ? 'text-blue-600': 'text-gray-500'}} font-medium py-1 px-3 rounded hover:bg-blue-50 transition">Register</a>
+                <a href="/lupa" wire:navigate class="{{ Request::is('lupa') ? 'text-blue-600': 'text-gray-500'}} font-medium py-1 px-3 rounded hover:bg-blue-50 transition">Lupa Password</a>
             </div>
 
             {{ $slot }}

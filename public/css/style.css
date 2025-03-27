@@ -1,0 +1,35 @@
+:root {
+  --primary-bg-color: 20, 20, 36;
+  --acecnt-bg-color: 10, 10, 21;
+
+  --aside-bg-color: 28, 28, 46;
+
+  --text-primary: 129, 140, 248;
+  --text-accent: 165, 180, 252;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+aside::-webkit-scrollbar {
+  width: 0.5rem;
+}
+aside::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+aside::-webkit-scrollbar-thumb {
+  background-color: #6366f1; 
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+aside::-webkit-scrollbar-thumb:hover {
+  background-color: #4f46e5;
+}
+.dotsub {
+  padding: 3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
