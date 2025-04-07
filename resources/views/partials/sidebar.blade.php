@@ -1,4 +1,4 @@
-<aside class="fixed justify-between top-0 left-0 z-50 sm:static sm:z-auto sm:flex sm:flex-col w-72 sm:w-64 bg-[#1c1c2e] h-screen overflow-y-scroll pl-2">
+<aside id="sidebar" class="fixed justify-between top-0 left-0 z-50 sm:static sm:z-auto sm:flex sm:flex-col w-72 sm:w-64 bg-[#1c1c2e] h-screen overflow-y-scroll pl-2">
   <div>
     <div class="w-full flex justify-center py-4 text-2xl font-bold text-indigo-400 mb-4 border-b border-gray-700">
       MyDashboard
@@ -157,39 +157,39 @@
       </div>
 
       <div>
-        <button class="text-md w-full flex items-center py-2 px-2 rounded-md  transition-all duration-200 {{ Request::is('_component-*') ? 'text-white bg-indigo-600' : 'hover:bg-indigo-600 hover:text-white text-indigo-300' }}"
+        <button class="text-md w-full flex items-center py-2 px-2 rounded-md  transition-all duration-200 {{ Request::is('_component/*') ? 'text-white bg-indigo-600' : 'hover:bg-indigo-600 hover:text-white text-indigo-300' }}"
           data-toggle="nested-management-component">
-          <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="chevron-icon transition-transform duration-300 icon icon-tabler icons-tabler-outline icon-tabler-chevron-right {{ Request::is('_dashboard/media-*') ? "rotate-90" : "" }}"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+          <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="chevron-icon transition-transform duration-300 icon icon-tabler icons-tabler-outline icon-tabler-chevron-right {{ Request::is('_component/*') ? "rotate-90" : "" }}"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
           <span class="text-md ml-2 font-semibold">Component List</span>
         </button>
 
         <!-- Nested submenu 2 -->
-        <div id="nested-management-component" class="ml-4 mt-2 space-y-1 {{ Request::is('_component-*') ? '' : 'hidden'}}">
-          <a href="{{ route('component-box') }}" wire:navigate class="flex items-center gap-2 text-sm py-1 px-2 rounded-md {{ Request::is('_component-box') ? 'bg-indigo-700 text-white' : 'text-indigo-200 hover:bg-indigo-700 hover:text-white' }}">
+        <div id="nested-management-component" class="ml-4 mt-2 space-y-1 {{ Request::is('_component/*') ? '' : 'hidden'}}">
+          <a href="{{ route('component-box') }}" wire:navigate class="flex items-center gap-2 text-sm py-1 px-2 rounded-md {{ Request::is('_component/component-box') ? 'bg-indigo-700 text-white' : 'text-indigo-200 hover:bg-indigo-700 hover:text-white' }}">
             <div class="dotsub bg-indigo-200"></div>
             <span>Box</span>
           </a>
-          <a href="{{ route('component-table') }}" wire:navigate class="flex items-center gap-2 text-sm py-1 px-2 rounded-md {{ Request::is('_component-table') ? 'bg-indigo-700 text-white' : 'text-indigo-200 hover:bg-indigo-700 hover:text-white' }}">
+          <a href="{{ route('component-table') }}" wire:navigate onclick="scrollToMenu(this)" class="flex items-center gap-2 text-sm py-1 px-2 rounded-md {{ Request::is('_component/component-table') ? 'bg-indigo-700 text-white' : 'text-indigo-200 hover:bg-indigo-700 hover:text-white' }}">
             <div class="dotsub bg-indigo-200"></div>
             <span>Table</span>
           </a>
-          <a href="{{ route('component-form') }}" wire:navigate class="flex items-center gap-2 text-sm py-1 px-2 rounded-md {{ Request::is('_component-form') ? 'bg-indigo-700 text-white' : 'text-indigo-200 hover:bg-indigo-700 hover:text-white' }}">
+          <a href="{{ route('component-form') }}" wire:navigate class="flex items-center gap-2 text-sm py-1 px-2 rounded-md {{ Request::is('_component/component-form') ? 'bg-indigo-700 text-white' : 'text-indigo-200 hover:bg-indigo-700 hover:text-white' }}">
             <div class="dotsub bg-indigo-200"></div>
             <span>Form</span>
           </a>
-          <a href="{{ route('component-modal') }}" wire:navigate class="flex items-center gap-2 text-sm py-1 px-2 rounded-md {{ Request::is('_component-modal') ? 'bg-indigo-700 text-white' : 'text-indigo-200 hover:bg-indigo-700 hover:text-white' }}">
+          <a href="{{ route('component-modal') }}" wire:navigate class="flex items-center gap-2 text-sm py-1 px-2 rounded-md {{ Request::is('_component/component-modal') ? 'bg-indigo-700 text-white' : 'text-indigo-200 hover:bg-indigo-700 hover:text-white' }}">
             <div class="dotsub bg-indigo-200"></div>
             <span>Modal</span>
           </a>
-          <a href="{{ route('component-button') }}" wire:navigate class="flex items-center gap-2 text-sm py-1 px-2 rounded-md {{ Request::is('_component-button') ? 'bg-indigo-700 text-white' : 'text-indigo-200 hover:bg-indigo-700 hover:text-white' }}">
+          <a href="{{ route('component-button') }}" wire:navigate class="flex items-center gap-2 text-sm py-1 px-2 rounded-md {{ Request::is('_component/component-button') ? 'bg-indigo-700 text-white' : 'text-indigo-200 hover:bg-indigo-700 hover:text-white' }}">
             <div class="dotsub bg-indigo-200"></div>
             <span>Button</span>
           </a>
-          <a href="{{ route('component-card') }}" wire:navigate class="flex items-center gap-2 text-sm py-1 px-2 rounded-md {{ Request::is('_component-card') ? 'bg-indigo-700 text-white' : 'text-indigo-200 hover:bg-indigo-700 hover:text-white' }}">
+          <a href="{{ route('component-card') }}" wire:navigate class="flex items-center gap-2 text-sm py-1 px-2 rounded-md {{ Request::is('_component/component-card') ? 'bg-indigo-700 text-white' : 'text-indigo-200 hover:bg-indigo-700 hover:text-white' }}">
             <div class="dotsub bg-indigo-200"></div>
             <span>Card</span>
           </a>
-          <a href="{{ route('component-other') }}" wire:navigate class="flex items-center gap-2 text-sm py-1 px-2 rounded-md {{ Request::is('_component-other') ? 'bg-indigo-700 text-white' : 'text-indigo-200 hover:bg-indigo-700 hover:text-white' }}">
+          <a href="{{ route('component-other') }}" wire:navigate class="flex items-center gap-2 text-sm py-1 px-2 rounded-md {{ Request::is('_component/component-other') ? 'bg-indigo-700 text-white' : 'text-indigo-200 hover:bg-indigo-700 hover:text-white' }}">
             <div class="dotsub bg-indigo-200"></div>
             <span>Other</span>
           </a>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Page Not Found | Lotto Group</title>
+    <title>404 - Page Not Found</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gradient-to-br from-[#141424] to-[#0a0a15] flex items-center justify-center min-h-screen px-4">
@@ -22,7 +22,7 @@
         </a>
         
         <div class="text-center text-gray-400 mt-6 text-sm">
-            © Copyright 2010 - 2025 L2I All Rights Reserved.
+            © Copyright 2010 - 2025 All Rights Reserved.
         </div>
     </div>
 </body>

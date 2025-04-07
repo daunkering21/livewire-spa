@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotto 21 Group - Login</title>
+    <title>Dashboard - Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gradient-to-br from-[#141424] to-[#0a0a15] flex items-center justify-center min-h-screen px-4">
     <div class="w-full max-w-md bg-[#1e1e2e] rounded-2xl shadow-2xl border border-[#2c2c3e]">
         <div class="p-8">
-            <div class="flex justify-center">
-                <img src="{{ asset('img/Logo-Lotto21.png') }}" alt="Lotto Group" class="h-20 w-auto">
-            </div>
+            {{-- <div class="flex justify-center">
+                <img src="{{ asset('img/carionid.png') }}" alt="Dashboard" class="h-20 w-auto">
+            </div> --}}
             <h2 class="text-center text-white text-2xl font-semibold mb-4">LOGIN</h2>
             <p class="text-center text-gray-400 mb-6">Enter your username & password to login</p>
             
@@ -91,7 +91,7 @@
             </form>
             
             <div class="text-center text-gray-400 mt-6 text-sm">
-                © Copyright {{ Carbon\Carbon::now()->format('Y') }} L2I All Rights Reserved.
+                © Copyright {{ Carbon\Carbon::now()->format('Y') }} Dashboard. All Rights Reserved.
             </div>
         </div>
     </div>

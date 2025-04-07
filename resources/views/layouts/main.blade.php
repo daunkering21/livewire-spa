@@ -9,7 +9,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-<body class="bg-gradient-to-br from-[#141424] to-[#0a0a15] text-white min-h-screen flex">
+<body class="bg-gradient-to-br {{ env('BG_GRADIENT') ?? 'from-[#141424] to-[#0a0a15]' }} text-white min-h-screen flex">
     
     @include('partials.sidebar')
   
@@ -31,12 +31,47 @@
           $chevron.toggleClass('rotate-90', !isVisible);
 
           $submenu.slideToggle(200, function () {
-            $button.toggleClass('text-white bg-indigo-600', !isVisible);
-            $button.toggleClass('text-indigo-300 hover:bg-indigo-600 hover:text-white', isVisible);
+            $button.toggleClass(`text-white bg-indigo-600`, !isVisible);
+            $button.toggleClass(`text-indigo-300 hover:bg-indigo-600 hover:text-white`, isVisible);
           });
         });
       });
     </script>
+    {{-- <script>
+      // Global var
+      window.clickedSidebarItem = null;
+
+      function scrollToMenu(el) {
+        const $sidebar = $('#sidebar');
+        if ($sidebar.length) {
+          localStorage.setItem('sidebar-scroll', $sidebar.scrollTop());
+        }
+        window.clickedSidebarItem = el;
+      }
+
+      document.addEventListener('livewire:navigated', () => {
+        setTimeout(() => {
+          const $sidebar = $('#sidebar');
+
+          if (!$sidebar.length) {
+            console.warn('Sidebar not found.');
+            return;
+          }
+
+          const scroll = localStorage.getItem('sidebar-scroll');
+          if (scroll !== null) {
+            $sidebar.animate({ scrollTop: scroll }, 300); 
+          }
+
+          if (window.clickedSidebarItem) {
+            const offsetTop = $(window.clickedSidebarItem).position().top;
+            $sidebar.animate({ scrollTop: offsetTop - 100 }, 400);
+            window.clickedSidebarItem = null;
+          }
+        }, 150);
+      });
+    </script> --}}
+
     
 </body>
 </html>
