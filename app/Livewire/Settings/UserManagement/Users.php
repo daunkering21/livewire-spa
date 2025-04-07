@@ -9,7 +9,7 @@ class Users extends Component
     public function render()
     {
         $breadcrumb = [
-            ['name' => 'Settings', 'url' => route('table-website')],
+            ['name' => 'Settings', 'url' => route('preferences')],
             ['name' => 'User Management', 'url' => route('user-management-users')],
             ['name' => 'Users', 'url' => route('user-management-users')],
         ];

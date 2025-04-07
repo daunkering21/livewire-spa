@@ -9,7 +9,7 @@ class Preferences extends Component
     public function render()
     {
         $breadcrumb = [
-            ['name' => 'Settings', 'url' => route('table-website')],
+            ['name' => 'Settings', 'url' => route('preferences')],
             ['name' => 'Preferences', 'url' => route('preferences')],
         ];
 
